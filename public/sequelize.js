@@ -39,9 +39,9 @@ async function getUser(){
 
 async function getComment(id){
     try{
-        const res = await axiod.getComment(`/users/${id}/comments`);
+        const res = await axios.get(`/users/${id}/comments`);
         const comments = res.data;
-        const tbody = document.querySelector('#comment-list-tbody');
+        const tbody = document.querySelector('#comment-list tbody');
         tbody.innerHTML = '';
         comments.map(function(comment){
             const row = document.createElement('tr');
